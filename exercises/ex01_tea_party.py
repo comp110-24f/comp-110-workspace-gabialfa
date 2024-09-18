@@ -12,7 +12,9 @@ def main_planner(guests: int) -> None:
     print("Cost: $" + str(cost(tea_bags(guests), treats(guests))))
 
 
-# Cost must include tea_bags and treats values in order to evaluate based on the number of tea/treats, not number of people
+# Cost must include tea_bags and treats
+# values in order to evaluate based on the
+# number of tea/treats, not number of people
 
 
 def tea_bags(people: int) -> int:
