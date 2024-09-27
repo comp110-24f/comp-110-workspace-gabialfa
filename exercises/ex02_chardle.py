@@ -10,7 +10,7 @@ def main() -> None:
 
 
 def input_word() -> str:
-    word: str = input("Enter a 5 letter word: ")
+    word: str = input("Enter a 5-character word: ")
     # Store user-inputted word
     if len(word) == 5:
         # check that the inputted word is 5 characters long
@@ -22,7 +22,7 @@ def input_word() -> str:
 
 
 def input_letter() -> str:
-    letter: str = input("Enter single character: ")
+    letter: str = input("Enter a single character: ")
     # store user-inputter letter
     if len(letter) == 1:
         # check that the inputted letter is only 1 character
@@ -53,11 +53,14 @@ def contains_char(word: str, letter: str) -> None:
     if word[4] == letter:
         print(letter + " found at index " + str(4))
         count += 1
-    print(str(count) + " instances of " + letter + " found in " + word)
-    # state how many times letter is in word
+
     if count == 0:
         print("No instances of " + letter + " found in " + word)
     # for instances of no matches
+    elif count == 1:
+        print(str(count) + " instance of " + letter + " found in " + word)
+    else:
+        print(str(count) + " instances of " + letter + " found in " + word)
 
 
 if __name__ == "__main__":
