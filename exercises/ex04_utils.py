@@ -6,9 +6,12 @@ __author__ = "730746935"
 def all(set_all: list[int], num: int) -> bool:
     """Loop that identifies any non-matches"""
     i: int = 0
+    if len(set_all) == 0:
+        return False
     while i < len(set_all):
         if set_all[i] != num:
             return False
+        i += 1
     return True
 
 

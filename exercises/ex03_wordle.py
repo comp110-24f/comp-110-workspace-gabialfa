@@ -9,7 +9,7 @@ def main(secret: str) -> None:
     turn: int = 1
     # identify if game has been won
     won: bool = False
-    while turn <= 6 and won == False:
+    while turn <= 6 and won is False:
         print(f"=== Turn {turn}/6 ===")
         user_guess = input_guess(len(secret))
         print(emojified(user_guess, secret))
@@ -19,7 +19,7 @@ def main(secret: str) -> None:
             won = True
         turn += 1
     # if guess is not found in 6 turns
-    if won == False:
+    if won is False:
         print("X/6 - Sorry, try again tomorrow!")
 
 
