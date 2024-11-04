@@ -3,20 +3,24 @@
 __author__ = "730746935"
 
 
-def main(main_secret: str) -> None:
+def main(secret: str) -> None:
     """Entrypoint of the program"""
-    # user_guess: str = input_guess()
+    # Track number of turns taken
     turn: int = 1
-    while turn <= 6:
+    # identify if game has been won
+    won: bool = False
+    while turn <= 6 and won == False:
         print(f"=== Turn {turn}/6 ===")
-        user_guess = input_guess(len(main_secret))
-        print(emojified(user_guess, main_secret))
-        if user_guess == main_secret:
+        user_guess = input_guess(len(secret))
+        print(emojified(user_guess, secret))
+        if user_guess == secret:
+            # if guess is the same as secret -- if they won!
             print(f"You won in {turn}/6 turns!")
-            exit()
+            won = True
         turn += 1
-    print("X/6 - Sorry, try again tomorrow!")
-    exit()
+    # if guess is not found in 6 turns
+    if won == False:
+        print("X/6 - Sorry, try again tomorrow!")
 
 
 def input_guess(secret_word_len: int) -> str:
@@ -63,8 +67,9 @@ def emojified(guess: str, secret: str) -> str:
         else:
             emoji_string += WHITE_BOX
         index += 1
-    print(emoji_string)
+    # print(emoji_string)
+    return emoji_string
 
 
 if __name__ == "__main__":
-    main(main_secret="codes")
+    main(secret="codes")
