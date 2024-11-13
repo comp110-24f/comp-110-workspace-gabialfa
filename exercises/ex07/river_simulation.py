@@ -1,4 +1,4 @@
-"""Creating my river"""
+"""Creating my river simulation."""
 
 from exercises.ex07.river import River
 
